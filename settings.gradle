@@ -1,1 +1,1 @@
-include ':app', ':appmanager'
+include ':app', ':appmanager', ':dialogmanager'

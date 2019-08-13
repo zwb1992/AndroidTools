@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".MainActivity">
+        tools:context=".test_dialogmanager.DialogManagerActivity">
 
     <Button
-            android:id="@+id/btTestAppManager"
+            android:id="@+id/btNext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAllCaps="false"
-            android:text="Test appManager"/>
-    <Button
-            android:id="@+id/btTestDialogManager"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAllCaps="false"
-            android:text="Test DialogManager"/>
+            android:text="进入下一个界面"/>
 
+    <Button
+            android:id="@+id/btShowDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="延时触发弹框"/>
 </LinearLayout>
