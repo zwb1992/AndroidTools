@@ -1,1 +1,8 @@
 统一管理全局Dialog的弹出顺序，保证一个界面一次只能弹出一个Dialog,可以为不同的Dialog设置优先级
+
+集成BaseDialog    使用showDialogManager方法加入管理
+
+不同的方式添加Dialog:
+
+1.使用原生的AppCompatDialog
+2.在DecorView中添加一个布局 使其在最上层显示 控制各种事件的监听工作，自定义动画之类的操作

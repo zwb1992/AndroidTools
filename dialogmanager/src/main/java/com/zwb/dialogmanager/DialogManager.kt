@@ -36,9 +36,9 @@ object DialogManager {
             contextDialogs?.sortBy { it.getPriority() }
             dialog.addOnDismissListener(object : DialogInterface.OnDismissListener {
                 override fun onDismiss(dialogManagerInterface: DialogManagerInterface) {
-                    val context = dialogManagerInterface.getActivity()
-                    removeShowingDialog(context)
-                    showNextDialog(context)
+                    val activity = dialogManagerInterface.getActivity()
+                    removeShowingDialog(activity)
+                    showNextDialog(activity)
                 }
             })
             if (!showingDialogs.containsKey(context)) {
@@ -61,7 +61,7 @@ object DialogManager {
                     val targetDialog = contextDialogs.last()
                     contextDialogs.remove(targetDialog)
                     showingDialogs[context] = targetDialog
-                    targetDialog.showDialog()
+                    targetDialog.show()
                 }
             }
         }
@@ -86,7 +86,7 @@ object DialogManager {
             }
             dialogs.remove(context)
             showingDialogs[context]?.destroy()
-            showingDialogs[context]?.dismissDialog()
+            showingDialogs[context]?.dismiss()
         }
     }
 }

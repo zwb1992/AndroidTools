@@ -6,7 +6,6 @@ import android.util.DisplayMetrics
 import android.view.KeyEvent
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatDialog
-import androidx.core.content.ContextCompat.getSystemService
 import com.zwb.dialogmanager.DialogInterface
 import com.zwb.dialogmanager.DialogManager
 import com.zwb.dialogmanager.DialogManagerInterface
@@ -17,20 +16,17 @@ import com.zwb.dialogmanager.R
  * @ time: 2019/8/13 19:18.
  * @ desc:
  **/
-abstract class BaseDialog : AppCompatDialog, DialogManagerInterface, DialogConfigInterface {
+abstract class BaseDialog(var mActivity: Activity?) : AppCompatDialog(mActivity, R.style.baseDialog),
+    DialogManagerInterface, DialogConfigInterface {
 
     private val listeners = mutableListOf<DialogInterface.OnDismissListener>()
-    protected var mActivity: Activity? = null
     private var mOnKeyListener: DialogInterface.OnKeyListener? = null
-
-    constructor(context: Activity?) : super(context, R.style.baseDialog) {
-        mActivity = context
-    }
+    private var canceledOnBackPressed = true
 
     init {
-        val view = layoutInflater.inflate(tellMeLayout(), null)
-        setContentView(view)
-        onCreateView(view)
+        val view = layoutInflater.inflate(this.tellMeLayout(), null)
+        this.setContentView(view)
+        this.onCreateView(view)
         setConfig()
         setOnDismissListener {
             listeners.forEach {
@@ -67,19 +63,14 @@ abstract class BaseDialog : AppCompatDialog, DialogManagerInterface, DialogConfi
 
     override fun getActivity() = mActivity
 
-    override fun showDialog() {
-        show()
-    }
-
-    override fun dismissDialog() {
-        dismiss()
-    }
-
     override fun destroy() {
         mActivity = null
         listeners.clear()
     }
 
+    /**
+     * 加入管理
+     */
     fun showDialogManager() {
         DialogManager.showDialogManager(this)
     }
@@ -90,5 +81,18 @@ abstract class BaseDialog : AppCompatDialog, DialogManagerInterface, DialogConfi
         val metrics = DisplayMetrics()
         d.getMetrics(metrics)
         return (metrics.widthPixels * 0.71).toInt()
+    }
+
+    override fun isCanceledOnBackPressed() = canceledOnBackPressed
+
+    /**
+     * 动态设置位置
+     */
+    fun setGravity(gravity: Int) {
+        window?.attributes?.gravity = gravity
+    }
+
+    fun setCanceledOnBackPressed(cancelable: Boolean) {
+        this.canceledOnBackPressed = cancelable
     }
 }

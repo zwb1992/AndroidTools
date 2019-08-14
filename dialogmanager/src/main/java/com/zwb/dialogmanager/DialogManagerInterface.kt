@@ -22,12 +22,12 @@ interface DialogManagerInterface {
     /**
      * 显示Dialog
      */
-    fun showDialog()
+    fun show()
 
     /**
      * 隐藏Dialog
      */
-    fun dismissDialog()
+    fun dismiss()
 
     /**
      * 添加弹框显示的监听
