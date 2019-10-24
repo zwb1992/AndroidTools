@@ -5,27 +5,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".MainActivity">
+        tools:context=".test_livedatabus.LiveDataBus2Activity">
 
     <Button
-            android:id="@+id/btTestAppManager"
+            android:id="@+id/btNext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Test appManager"
-            android:textAllCaps="false" />
+            android:text="Next" />
 
     <Button
-            android:id="@+id/btTestDialogManager"
+            android:id="@+id/btPostData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Test DialogManager"
-            android:textAllCaps="false" />
-
-    <Button
-            android:id="@+id/btTestLiveDataBus"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Test LiveDataBus"
-            android:textAllCaps="false" />
-
+            android:text="postData" />
 </LinearLayout>

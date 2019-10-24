@@ -1,1 +1,1 @@
-include ':app', ':appmanager', ':dialogmanager', ':basetools'
+include ':app', ':appmanager', ':dialogmanager', ':basetools', ':livedatabus'

@@ -12,9 +12,11 @@
             <option value="$PROJECT_DIR$/appmanager" />
             <option value="$PROJECT_DIR$/basetools" />
             <option value="$PROJECT_DIR$/dialogmanager" />
+            <option value="$PROJECT_DIR$/livedatabus" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
+        <option name="testRunner" value="PLATFORM" />
       </GradleProjectSettings>
     </option>
   </component>

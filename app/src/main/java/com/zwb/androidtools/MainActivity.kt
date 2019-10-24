@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.zwb.androidtools.test_appmanager.AppManagerAActivity
 import com.zwb.androidtools.test_dialogmanager.DialogManagerActivity
+import com.zwb.androidtools.test_livedatabus.LiveDataBus1Activity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +18,9 @@ class MainActivity : AppCompatActivity() {
         }
         btTestDialogManager.setOnClickListener {
             startActivity(Intent(this, DialogManagerActivity::class.java))
+        }
+        btTestLiveDataBus.setOnClickListener {
+            startActivity(Intent(this, LiveDataBus1Activity::class.java))
         }
     }
 }

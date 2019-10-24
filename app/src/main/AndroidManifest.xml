@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.zwb.androidtools">
+        package="com.zwb.androidtools">
 
     <application
             android:name=".MyApplication"
@@ -10,16 +10,18 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".test_dialogmanager.DialogManagerActivity">
-        </activity>
-        <activity android:name=".test_appmanager.AppManagerAActivity"/>
-        <activity android:name=".test_appmanager.AppManagerBActivity"/>
-        <activity android:name=".test_appmanager.AppManagerCActivity"/>
+        <activity android:name=".test_livedatabus.LiveDataBus3Activity"></activity>
+        <activity android:name=".test_livedatabus.LiveDataBus2Activity" />
+        <activity android:name=".test_livedatabus.LiveDataBus1Activity" />
+        <activity android:name=".test_dialogmanager.DialogManagerActivity" />
+        <activity android:name=".test_appmanager.AppManagerAActivity" />
+        <activity android:name=".test_appmanager.AppManagerBActivity" />
+        <activity android:name=".test_appmanager.AppManagerCActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
